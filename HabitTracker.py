@@ -1,3 +1,5 @@
+import HabitLoop
+import Habit
 class HabitTracker:
     habits = []
     
@@ -8,10 +10,14 @@ if __name__ == '__main__':
     all_habits = HabitTracker()
     x = input('What would you like to do?\n')
     if x == 'add habit':
-        pass
+        cue = input('What is the cue?\n')
+        routine = input('What is the routine?\n')
+        reward = input('What is the reward?\n') 
+        habit = Habit(cue, routine, reward)        
+        all_habits.add_habit(habit)
     elif x == 'view habit':
         pass
     elif x == 'view all habits':
         pass
     else:
-        x = input("That's not a valid input. What would you like to do?\n") 
+        pass

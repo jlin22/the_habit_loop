@@ -1,5 +1,9 @@
 class HabitLoop:
     
+    def __init__(self, cue, routine, reward):
+        self.cue = cue
+        self.routine = routine
+        self.reward = routine
     def set_cue(self, cue):
         self.cue = cue
     def set_routine(self, routine):
