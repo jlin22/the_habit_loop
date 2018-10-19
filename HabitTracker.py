@@ -13,7 +13,7 @@ if __name__ == '__main__':
         cue = input('What is the cue?\n')
         routine = input('What is the routine?\n')
         reward = input('What is the reward?\n') 
-        habit = Habit(cue, routine, reward)        
+        habit = HabitLoop(cue, routine, reward)        
         all_habits.add_habit(habit)
     elif x == 'view habit':
         pass
