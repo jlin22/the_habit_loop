@@ -6,5 +6,5 @@ class HabitLoop:
         self.routine = routine
     def set_reward(self, reward):
         self.reward = reward
-    def set_date(self, date)
+    def set_date(self, date):
         self.date = date
