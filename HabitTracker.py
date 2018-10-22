@@ -56,7 +56,8 @@ if __name__ == '__main__':
                 continue
             print(all_habits.get_category(category))
         elif x == 'view all habits':
-            pass
+            for category in all_habits.categories():
+                print(all_habits.get_category(category))
         elif x == 'exit':
             break
         else:
