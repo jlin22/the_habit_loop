@@ -27,5 +27,3 @@ class HabitLoop:
             for entry in [self.number, str(self.date), self.cue, self.routine, self.reward]:
                 f.write(entry + '\n')
 
-h = HabitLoop('x', 'x', 'x', 'x')
-h.write_to_file('hello.py')
