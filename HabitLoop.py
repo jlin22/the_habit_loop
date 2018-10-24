@@ -22,4 +22,10 @@ class HabitLoop:
     def __str__(self):
         return 'Loop {} on {}\nCue: {}\nRoutine: {}\nReward: {}'.format(
             self.number, self.date, self.cue, self.routine, self.reward)
+    def write_to_file(self, file):
+        with open(file, 'w') as f:
+            for entry in [self.number, str(self.date), self.cue, self.routine, self.reward]:
+                f.write(entry + '\n')
 
+h = HabitLoop('x', 'x', 'x', 'x')
+h.write_to_file('hello.py')
