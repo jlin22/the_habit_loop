@@ -4,7 +4,10 @@ from HabitLoop import HabitLoop
 
 class HabitTracker:
     habits = {}
-    
+   
+    # need to make this 
+    def __init__(self, file):
+        pass 
     def add_new_category(self, category, habit):
         self.habits[category] = habit
     def add_habit_to_existing_category(self, category, loop):
@@ -20,6 +23,10 @@ class HabitTracker:
             return 1
         else:
             return self.habits[category].length()
+    # need to also make this
+    def update_file(self, file):
+        pass
+        
     
 if __name__ == '__main__':
     mkdir('Habits')
