@@ -1,15 +1,22 @@
+from os import remove
 from os import mkdir
+from os.path import exists
 from Habit import Habit
 from HabitLoop import HabitLoop
 
+# a new file for each category is suitable
 class HabitTracker:
     habits = {}
    
     # need to make this 
+    ''' 
     def __init__(self, file):
         pass 
+    '''
     def add_new_category(self, category, habit):
         self.habits[category] = habit
+        with open('./Habits/' + category, 'w') as f:
+            pass
     def add_habit_to_existing_category(self, category, loop):
         self.habits[category].add_habit_loop(loop)
     def is_empty(self):
@@ -29,7 +36,8 @@ class HabitTracker:
         
     
 if __name__ == '__main__':
-    mkdir('Habits')
+    if (not exists('./Habits')):
+        mkdir('Habits')
     all_habits = HabitTracker()
     while(True):
         x = input('What would you like to do?\n')
@@ -67,6 +75,10 @@ if __name__ == '__main__':
         elif x == 'view all habits':
             for category in all_habits.categories():
                 print(all_habits.get_category(category))
+        elif x == 'delete category':
+            category = input('Which category?\n')
+            if (exists('./Habits/' + category)):
+                remove('./Habits/' + category) 
         elif x == 'exit':
             break
         else:
