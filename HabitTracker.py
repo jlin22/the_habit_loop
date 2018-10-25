@@ -8,7 +8,7 @@ from HabitLoop import HabitLoop
 class HabitTracker:
     habits = {}
    
-    # need to make this 
+    # need to make this so you can read from a previous state
     ''' 
     def __init__(self, file):
         pass 
@@ -16,9 +16,13 @@ class HabitTracker:
     def add_new_category(self, category, habit):
         self.habits[category] = habit
         with open('./Habits/' + category, 'w') as f:
+            # in the Habit.py, add a __str__ method so I can write it
             pass
     def add_habit_to_existing_category(self, category, loop):
         self.habits[category].add_habit_loop(loop)
+        # write to the file
+        with open('./Habits/' + category, 'a') as f:
+            pass
     def is_empty(self):
         return len(self.habits) == 0
     def categories(self):
