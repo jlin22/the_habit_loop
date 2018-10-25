@@ -1,3 +1,4 @@
+from os import mkdir
 from Habit import Habit
 from HabitLoop import HabitLoop
 
@@ -21,6 +22,7 @@ class HabitTracker:
             return self.habits[category].length()
     
 if __name__ == '__main__':
+    mkdir('Habits')
     all_habits = HabitTracker()
     while(True):
         x = input('What would you like to do?\n')
